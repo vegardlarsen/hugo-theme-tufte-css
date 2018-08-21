@@ -19,6 +19,8 @@ h2 { padding-top: 2rem; }
  * the <code> is still different than the one in Tufte CSS. */
 pre code { font-size: 0.9rem;
            padding: 1rem 0;
-           overflow-x: auto;
-           font-feature-settings: "calt" 1;
-           font-family: 'Fira' }
+           overflow-x: auto; }
+
+/* Use Fira Code for code */
+code { font-family: "Fira Code", Consolas, "Liberation Mono", Menlo, Courier, monospace; 
+       font-feature-settings: "calt" 1; }

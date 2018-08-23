@@ -1,11 +1,18 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
 
+{{ define "header" }}
+<nav>
+  <a href="{{ .Site.BaseURL }}">&laquo; Return home</a>
+</nav>
+{{ end }}
+
 {{ define "main" }}
 {{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
 
 <article>
   <header>
     <h2>{{ .Title | markdownify }}</h2>
+    <p class="subtitle">{{ .Params.author | default .Site.Params.author }}</p>
     <p><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p>
   </header>
 

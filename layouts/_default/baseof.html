@@ -8,9 +8,8 @@
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    <link href="{{ .Site.BaseURL }}css/tufte.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/latex.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    {{ $style := resources.Get "main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 
     {{ if .RSSLink }}
     {{ "<!-- RSS 2.0 feed -->" | safeHTML }}

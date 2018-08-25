@@ -13,7 +13,7 @@
   <header>
     <h2>{{ .Title | markdownify }}</h2>
     <p class="subtitle">{{ .Params.author | default .Site.Params.author }}</p>
-    <p><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p>
+    <p><small><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> {{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</small></p>
   </header>
 
   <section>

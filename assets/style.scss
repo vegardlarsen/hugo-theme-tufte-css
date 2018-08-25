@@ -14,11 +14,12 @@
  * CSS, but it's close. */
 h2 { padding-top: 2rem; }
 
+pre { padding: 1rem 0; }
+
 /* Tufte CSS uses <pre class="code">, but Markdown generates <pre><code>. We can
  * fix part of that by using the same styles there, but the font-family used for
  * the <code> is still different than the one in Tufte CSS. */
 pre code { font-size: 0.9rem;
-           padding: 1rem 0;
            overflow-x: auto; }
 
 /* Use Fira Code for code */

@@ -25,3 +25,5 @@ pre code { font-size: 0.9rem;
 /* Use Fira Code for code */
 code { font-family: "Fira Code", Consolas, "Liberation Mono", Menlo, Courier, monospace; 
        font-feature-settings: "calt" 1; }
+
+@media (max-width: 760px) { section>ul, section>ol { width: auto; } }
